@@ -1,1 +1,2 @@
-console.log(5 && "qwerty")
+console.log((+null == false))
+ < 1 ** 5
