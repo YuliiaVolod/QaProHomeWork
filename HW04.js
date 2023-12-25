@@ -1,34 +1,39 @@
-let userInput = prompt("Введіть вік:");
-let year = parseInt(userInput);
+function checkAge() {
+    var number = document.getElementById("numberInput").value;
 
-if (!isNaN(year) && year >= 0 && Number.isInteger(year)) {
+    let year = parseInt(number);
+    let res = "";
 
-    let s = "";
-    let x2 = year % 100;
-    if (x2 >= 10 && x2 <= 19) {
-        s = " років";
-    } else {
-        let x1 = year % 10;
-        switch (x1) {
-            case 1:
-                s = " рік";
-                break;
-            case 2:
-            case 3:
-            case 4:
-                s = " роки";
-                break;
-            default:
-                s = " років";
+    if (!isNaN(year) && year >= 0 && Number.isInteger(year)) {
+
+        let x2 = year % 100;
+        if (x2 >= 10 && x2 <= 19) {
+            s = " років";
+        } else {
+            let x1 = year % 10;
+            switch (x1) {
+                case 1:
+                    s = " рік";
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                    s = " роки";
+                    break;
+                default:
+                    s = " років";
+            }
         }
+
+        res = year + s;
+
+    } else {
+        res = "Це не є додатнє ціле число або введене значення не є числом.";
     }
 
-    console.log(year + s);
+    document.getElementById("result").innerText = res;
 
-} else {
-    console.log("Це не є додатнє ціле число або введене значення не є числом.");
 }
-
 
 
 /*
