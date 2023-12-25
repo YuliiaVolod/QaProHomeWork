@@ -1,7 +1,7 @@
 let userInput = prompt("Введіть вік:");
 let year = parseInt(userInput);
 
-if (!isNaN(year) && year > 0 && Number.isInteger(year)) {
+if (!isNaN(year) && year >= 0 && Number.isInteger(year)) {
 
     let s = "";
     let x2 = year % 100;
@@ -9,12 +9,17 @@ if (!isNaN(year) && year > 0 && Number.isInteger(year)) {
         s = " років";
     } else {
         let x1 = year % 10;
-        if (x1 == 1) {
-            s = " рік";
-        } else if (x1 == 2 || x1 == 3 || x1 == 4) {
-            s = " роки";
-        } else {
-            s = " років";
+        switch (x1) {
+            case 1:
+                s = " рік";
+                break;
+            case 2:
+            case 3:
+            case 4:
+                s = " роки";
+                break;
+            default:
+                s = " років";
         }
     }
 
