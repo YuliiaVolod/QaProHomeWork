@@ -1,29 +1,28 @@
-let year = 12;
+let userInput = prompt("Введіть вік:");
+let year = parseInt(userInput);
 
-if(year < 0){
-    console.log("Ви ввели від'ємне число.");
-    return;
-}
+if (!isNaN(year) && year > 0 && Number.isInteger(year)) {
 
-let s = "";
-let x2 = year % 100;
-if (x2 >= 10 && x2 <= 19){
-    s = " років";
-}
-else{
-    let x1 = year % 10;
-    if(x1 == 1){
-        s = " рік";
-    }
-    else if(x1 == 2 || x1 == 3 || x1 == 4 ){
-        s = " роки";
-    }
-    else {
+    let s = "";
+    let x2 = year % 100;
+    if (x2 >= 10 && x2 <= 19) {
         s = " років";
+    } else {
+        let x1 = year % 10;
+        if (x1 == 1) {
+            s = " рік";
+        } else if (x1 == 2 || x1 == 3 || x1 == 4) {
+            s = " роки";
+        } else {
+            s = " років";
+        }
     }
-}
 
-console.log(year + s);
+    console.log(year + s);
+
+} else {
+    console.log("Це не є додатнє ціле число або введене значення не є числом.");
+}
 
 
 
