@@ -15,10 +15,9 @@ drawTriangle(5, *);
 Не використовувати функції або інші матеріали які ми не вивчали
 Намагайтесь робити ДЗ самостійно та не дивитися будьякі підказки*/
 
- drawTriangle(5, "0");
- drawTriangle(10, "0");
- drawTriangle(15, "0");
- 
+drawTriangle(5, "0");
+drawTriangle2(5, "*");
+
 function drawTriangle(height, form){
     for(let i = 1; i <= height; i++){
         let s = "";
@@ -27,4 +26,21 @@ function drawTriangle(height, form){
         }
         console.log(s);
     }
-}    
+} 
+
+function drawTriangle2(height, form){
+    let i = 1;
+    while (i <= height){
+        let s = "";
+        let j = 1;
+        while (j <= i){
+            j++;
+            s = s + form;
+        }
+        console.log(s);
+        i++;
+    }
+} 
+
+
+
