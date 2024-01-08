@@ -5,10 +5,15 @@
 Обчислити відсоткове співвідношення - чи буде воно близьке до 50%50? 
 Приклад функції checkProbabilityTheory(count). 
 Парметр count буде вказувати скільки разів буде генеруватися випадкове число.
+Функція виводить інформацію
+Кількість згенерованих чисел: кількість чисел
+Парних чисел: кількість парних чисел
+Не парних чисел: кількість не парних чисел
+Відсоток парних до не парних: 
 */
 
 
-for(let i = 0; i < 10; i++)
+//for(let i = 0; i < 10; i++)
     checkProbabilityTheory(1000);
 
 function checkProbabilityTheory(count){
@@ -21,5 +26,8 @@ function checkProbabilityTheory(count){
         else 
             odd++;
     }
-    console.log(Math.round(even/count*100) + "% / " + Math.round(odd/count*100) + "%");
+    console.log("Кількість згенерованих чисел: " + count);
+    console.log("Парних чисел: " + even);
+    console.log("Не парних чисел: " + odd);
+    console.log("Відсоток парних до не парних: " + Math.round(even/count*100) + "% / " + Math.round(odd/count*100) + "%");
 }
