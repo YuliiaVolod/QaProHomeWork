@@ -45,7 +45,7 @@ services.maxPrice = function(){
 
 services["Розбити скло"] = 200;
 
-console.log("Сума: " + services.price());
-console.log("Мінімальна ціна: " + services.minPrice());
-console.log("Максимальна ціна: " + services.maxPrice());
+console.log("Сума: " + services.price() + "грн");
+console.log("Мінімальна ціна: " + services.minPrice() + "грн");
+console.log("Максимальна ціна: " + services.maxPrice() + "грн");
 
