@@ -1,13 +1,3 @@
-/*
-Уявімо собі, що ми є власниками великої компанії, яка розробляє платформу для продажу квитків
-Окрім того, наша компанія продає рішення для організації продажу цих квитків
-Таким чином, у нас будуть клієнти, які придбають наше програмне забезпечення (ПО)
-По суті, ці клієнти будуть подібні до "дочірніх компаній" (subCompany), які вже використовують наше ПО для продажу квитків
-Крім цього, ці "дочірні компанії" також можуть стати постачальниками цього рішення, і в цьому випадку вони вже будуть "внучатами компанії" (subSubCompany), і так далі і далі
-
-Ось приклад об'єкту, зверніть увагу на вкладеність, та маєте на увазі що об'єкт може ставати ще глибшим. 
-*/
-
 const company = {
     name:'Лісова Корона',
     "business segment":'Лісорубне підприємство',
@@ -102,26 +92,32 @@ const company = {
                                             name: 'МебліКомфорт',
 											"business segment":'Продаж меблів',
 											sellers: [
-                                                'Ольга Коваленко',
-                                                'Марія Іванова',
-                                                'Ірина Сидоренко'
+                                                {
+													name1: 'Ольга Коваленко',
+													name2: 'Марія Іванова',
+													name3: 'Ірина Сидоренко',
+                                                },
                                             ]
                                         },
                                         {
                                             name: 'Імперія Меблів',
 											"business segment":'Продаж меблів',
 											sellers: [
-                                                'Наталія Петренко',
-												'Тетяна Шевченко'
+                                                { 
+													name1: 'Наталія Петренко',
+													name2: 'Тетяна Шевченко',
+                                                },
                                             ]
                                         },
                                         {
                                             name: 'Меблевий Експрес',
 											"business segment":'Продаж меблів',
 											sellers: [
-                                                'Ольга Коваленко',
-												'Марія Іванова',
-												'Ірина Сидоренко'
+                                                {
+													name1: 'Ольга Коваленко',
+													name2: 'Марія Іванова',
+													name3: 'Ірина Сидоренко',
+                                                },
                                             ]
                                         }
                                     ]
@@ -134,33 +130,3 @@ const company = {
         }
     ]
 }
-
-function findValueByKey(company, companyName){
-    for(let key in company){
-        const value = company[key];
-
-        if(key == "name" && value == companyName)
-            return company;
-        
-        else if(Array.isArray(value)){
-            for(let i = 0; i < value.length; i++){
-                const result = findValueByKey(value[i], companyName);
-                if (result !== null) 
-                    return result;
-            }
-        }
-    }
-    return null;
-}
-
-function getInfo(obj){
-    for(let key in obj){
-        const value = obj[key];
-        if(!Array.isArray(value) || key == "sellers")
-            console.log(key + ": " + value);
-
-    }
-}
-
-let foundCompany = findValueByKey(company, "Імперія Меблів");
-getInfo(foundCompany);
