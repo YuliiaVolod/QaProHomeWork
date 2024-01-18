@@ -3,5 +3,5 @@
 */
 
 const str = "qwErtytgGbafggAfffviuiuttvrffakljhikjghi";
-const re = /[b-z]{6}/gi;
+const re = /[^a]{6}/gi;
 console.log(str.match(re));
